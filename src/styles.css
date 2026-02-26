@@ -1,36 +1,46 @@
+/* --- Christ University Theme Variables --- */
+:root {
+  --cu-blue: #002b5c;       /* Deep Navy Blue */
+  --cu-light-blue: #004080; /* Secondary Blue */
+  --cu-gold: #ffb300;       /* Golden Yellow Accent */
+  --cu-bg-grey: #f4f6f9;    /* Very soft cool grey for background */
+}
 
-/* You can add global styles to this file, and also import other style files */
 html, body { 
   height: 100%; 
 }
 
 body { 
   margin: 0; 
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  /* CU uses clean, professional sans-serif fonts */
+  font-family: 'Open Sans', Roboto, "Helvetica Neue", sans-serif; 
+  background-color: var(--cu-bg-grey); 
   
-  /* Soft grey background makes white cards look better */
-  background-color: #f5f5f5; 
-}
-
-/* Global Button Polish */
-button.mat-mdc-raised-button.mat-primary {
-  background-color: #1a237e !important; /* Matches navbar */
-}
-/* Global Styles */
-html, body { 
-  height: 100%; 
-}
-
-body { 
-  margin: 0; 
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: #f5f5f5; 
-  
-  /* CRITICAL: Pushes content down so it shows below the fixed navbar */
+  /* CRITICAL: Pushes content down below the fixed navbar */
   padding-top: 64px; 
 }
 
-/* Global Button Polish */
+/* Global Button Polish - Force CU Blue */
 button.mat-mdc-raised-button.mat-primary {
-  background-color: #1a237e !important; 
+  background-color: var(--cu-blue) !important;
+  color: white !important;
+  letter-spacing: 0.5px;
+}
+
+/* Global Accent Buttons - Force CU Gold */
+button.mat-mdc-raised-button.mat-accent,
+button.mat-mdc-raised-button.mat-warn {
+  background-color: var(--cu-gold) !important;
+  color: #000 !important; /* Dark text on gold for readability */
+  font-weight: bold;
+}
+
+/* --- NEW: SnackBar Error Styling --- */
+.error-snackbar {
+  background-color: #f44336 !important;
+  color: white !important;
+  font-weight: bold;
+}
+.error-snackbar .mat-mdc-button .mdc-button__label {
+  color: white !important;
 }

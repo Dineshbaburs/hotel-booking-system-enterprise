@@ -1,6 +1,11 @@
 /* Full Page Background */
 .login-wrapper {
-  min-height: 100vh;
+  /* --- NEW FIXES TO REMOVE THE WHITE BAR --- */
+  margin-top: -64px;               
+  min-height: calc(100vh + 64px);  
+  box-sizing: border-box;          
+  /* ----------------------------------------- */
+  
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1219,32 +1219,42 @@
   ],
   "bookings": [
     {
-      "id": "fad4",
-      "roomId": 2801,
-      "guestName": "Dinesh",
-      "email": "dinesh@gamil.com",
-      "checkInDate": "2026-01-22",
-      "checkOutDate": "2026-01-23",
+      "id": "30e6",
+      "roomId": 2701,
+      "guestName": "DInesh",
+      "email": "dinesh@gmail.com",
+      "checkInDate": "2026-02-23",
+      "checkOutDate": "2026-03-20",
       "totalPrice": 0,
       "status": "confirmed"
     },
     {
-      "id": "ac7f",
-      "roomId": 2601,
-      "guestName": "mohan",
-      "email": "mohan@gmail.com",
-      "checkInDate": "4422-04-04",
-      "checkOutDate": "2006-02-02",
+      "id": "56bc",
+      "roomId": 2202,
+      "guestName": "JASHWANTH",
+      "email": "jash@gamil.com",
+      "checkInDate": "200026-03-23",
+      "checkOutDate": "2026-02-22",
       "totalPrice": 0,
-      "status": "cancelled"
+      "status": "confirmed"
     },
     {
-      "id": "86d7",
-      "roomId": 2801,
-      "guestName": "Jashwanth B S",
-      "email": "jash@gmail.com",
-      "checkInDate": "222222-01-01",
-      "checkOutDate": "1144-12-23",
+      "id": "9d80",
+      "roomId": 101,
+      "guestName": "Prisha",
+      "email": "guest@gmail.com",
+      "checkInDate": "2026-02-22",
+      "checkOutDate": "2026-03-23",
+      "totalPrice": 0,
+      "status": "confirmed"
+    },
+    {
+      "id": "769d",
+      "roomId": 1102,
+      "guestName": "Kumar",
+      "email": "kumr@gmail.com",
+      "checkInDate": "0004-08-05",
+      "checkOutDate": "0005-05-05",
       "totalPrice": 0,
       "status": "confirmed"
     }

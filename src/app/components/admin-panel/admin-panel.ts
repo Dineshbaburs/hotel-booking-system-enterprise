@@ -40,32 +40,23 @@ export class AdminPanelComponent implements OnInit {
   }
 
   cancelBooking(id: string | number) {
-    // 1. Ask for confirmation before cancelling
     if (confirm(`Are you sure you want to cancel booking #${id}?`)) {
-      
-      // 2. Send PATCH request to update status in db.json
-      this.http.patch(`${this.apiUrl}/${id}`, { status: 'cancelled' }).subscribe({
-        
+      // Send PATCH request to update status in db.json
+      this.http.patch(`http://localhost:3000/bookings/${id}`, { status: 'cancelled' }).subscribe({
         next: () => {
-          // 3. Show success message (Guideline 8)
           this.snackBar.open(`Booking #${id} cancelled successfully!`, 'Close', { 
             duration: 3000,
             panelClass: ['success-snackbar']
           });
-          
-          // 4. Update the local table UI immediately
+          // Update the table UI immediately
           const updatedBooking = this.bookings.find(b => b.id === id);
           if (updatedBooking) {
             updatedBooking.status = 'cancelled';
           }
         },
-        
         error: (err) => {
-          // Show error message if API fails
           console.error(err);
-          this.snackBar.open('Failed to cancel booking. Please try again.', 'Close', { 
-            duration: 3000 
-          });
+          this.snackBar.open('Failed to cancel booking. Please try again.', 'Close', { duration: 3000 });
         }
       });
     }

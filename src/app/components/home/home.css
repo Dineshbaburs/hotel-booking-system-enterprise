@@ -1,7 +1,7 @@
 /* Container for the background image */
 .hero-container {
-  /* FIXED: Calculates exact height (Screen - Navbar Height) */
-  min-height: calc(100vh - 64px); 
+  /* FIXED: Changed to 100vh to remove the white gap */
+  min-height: 100vh; 
   
   /* FIXED: Premium Parallax Effect (Image stays still when scrolling) */
   background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
@@ -18,8 +18,10 @@
 .overlay {
   background: rgba(0, 0, 0, 0.5); 
   width: 100%;
-  /* Match container height */
-  min-height: calc(100vh - 64px); 
+  
+  /* FIXED: Match container height to 100vh */
+  min-height: 100vh; 
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,8 +40,9 @@
 
 .search-box h1 {
   margin-top: 0;
-  color: #1a237e;
-  font-size: 2rem;
+  color: #002b5c; /* CU Blue */
+  font-size: 2.2rem;
+  font-weight: bold;
 }
 
 .search-bar {
