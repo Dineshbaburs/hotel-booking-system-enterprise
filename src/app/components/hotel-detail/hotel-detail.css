@@ -1,0 +1,139 @@
+/* Container for the whole page */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 1. HERO SECTION (The Big Image at Top) */
+.hotel-hero {
+  position: relative;
+  height: 400px; /* Fixed height for banner */
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers area without stretching */
+}
+
+/* Dark overlay so text is readable */
+.hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #ddd;
+}
+
+.location mat-icon {
+  margin-right: 8px;
+}
+
+/* 2. CONTENT LAYOUT (Split Screen) */
+.content-wrapper {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap; /* Wraps on mobile */
+}
+
+/* Left Side: Description */
+.description-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.description-section h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.description-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Right Side: Rooms List */
+.rooms-section {
+  flex: 2; /* Takes more space */
+  min-width: 300px;
+}
+
+.rooms-section h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Grid for Room Cards */
+.room-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.room-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2e7d32; /* Green for money */
+  margin-top: 10px;
+}
+
+ul {
+  padding-left: 20px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Loading / Error Messages */
+.status-message {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.status-message.error {
+  color: red;
+}

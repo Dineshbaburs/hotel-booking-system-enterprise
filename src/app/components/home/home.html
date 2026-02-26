@@ -1,0 +1,23 @@
+<div class="hero-container">
+  <div class="overlay">
+    <div class="search-box">
+      <h1>Find Your Next Stay</h1>
+      <p>Search deals on hotels, homes, and much more...</p>
+      
+      <div class="search-bar">
+        <mat-form-field appearance="outline" class="location-select">
+          <mat-label>Where are you going?</mat-label>
+          <mat-select [(ngModel)]="selectedLocation">
+            <mat-option *ngFor="let loc of locations" [value]="loc">
+              {{ loc }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="onSearch()" [disabled]="!selectedLocation">
+          SEARCH
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

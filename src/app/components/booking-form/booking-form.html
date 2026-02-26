@@ -1,0 +1,39 @@
+<div class="booking-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Complete Your Booking</mat-card-title>
+      <mat-card-subtitle>Room ID: {{ roomId }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+        
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Guest Name</mat-label>
+          <input matInput formControlName="guestName" placeholder="John Doe">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email Address</mat-label>
+          <input matInput formControlName="email" placeholder="john@example.com">
+        </mat-form-field>
+
+        <div class="date-row">
+          <mat-form-field appearance="outline">
+            <mat-label>Check-in</mat-label>
+            <input matInput type="date" formControlName="checkInDate">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Check-out</mat-label>
+            <input matInput type="date" formControlName="checkOutDate">
+          </mat-form-field>
+        </div>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="bookingForm.invalid">
+          CONFIRM BOOKING
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

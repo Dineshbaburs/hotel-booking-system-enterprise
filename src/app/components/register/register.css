@@ -1,0 +1,57 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* Keeps it centered vertically */
+  padding: 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px; /* Limits width on big screens */
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Nice drop shadow */
+}
+
+mat-card-title {
+  margin-bottom: 20px !important;
+  color: #3f51b5;
+  font-weight: bold;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+  display: block;
+}
+
+button {
+  width: 100%;
+  padding: 8px;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.error {
+  color: #f44336;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+mat-card-footer {
+  display: block;
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid #eee;
+}
+
+a {
+  color: #3f51b5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}

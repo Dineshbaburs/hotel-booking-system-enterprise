@@ -1,0 +1,60 @@
+<div class="login-wrapper">
+  <div class="login-container">
+    
+    <div class="branding-section">
+      <div class="brand-content">
+        <h1>Welcome to <br> JDP Hotels Booking</h1>
+        <p class="subtitle">Experience luxury, comfort, and the best rates guaranteed.</p>
+        
+        <div class="features-list">
+          <div class="feature">
+            <mat-icon>verified</mat-icon>
+            <span>Verified Premium Hotels</span>
+          </div>
+          <div class="feature">
+            <mat-icon>savings</mat-icon>
+            <span>Exclusive Deals & Discounts</span>
+          </div>
+          <div class="feature">
+            <mat-icon>support_agent</mat-icon>
+            <span>24/7 Customer Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div class="form-header">
+        <h2>Sign In</h2>
+        <p>Access your account to manage bookings.</p>
+      </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email Address</mat-label>
+          <input matInput formControlName="email" type="email" placeholder="Ex. user@example.com">
+          <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password" placeholder="********">
+          <mat-icon matSuffix>lock</mat-icon>
+        </mat-form-field>
+
+        <p class="error-msg" *ngIf="errorMessage">
+          <mat-icon inline>error</mat-icon> {{ errorMessage }}
+        </p>
+
+        <button mat-raised-button color="primary" class="login-btn" type="submit" [disabled]="loginForm.invalid">
+          LOGIN
+        </button>
+
+        <div class="footer-links">
+          <p>New to JDP Hotels Booking? <a routerLink="/register">Create an Account</a></p>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

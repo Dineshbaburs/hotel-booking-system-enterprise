@@ -1,0 +1,60 @@
+/* Container for the background image */
+.hero-container {
+  /* FIXED: Calculates exact height (Screen - Navbar Height) */
+  min-height: calc(100vh - 64px); 
+  
+  /* FIXED: Premium Parallax Effect (Image stays still when scrolling) */
+  background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* <--- KEY FIX: Keeps image still */
+  background-repeat: no-repeat;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5); 
+  width: 100%;
+  /* Match container height */
+  min-height: calc(100vh - 64px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-box {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  max-width: 500px;
+  width: 90%;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.search-box h1 {
+  margin-top: 0;
+  color: #1a237e;
+  font-size: 2rem;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+button {
+  height: 56px;
+  font-size: 1.1rem;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

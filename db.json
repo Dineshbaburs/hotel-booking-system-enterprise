@@ -1,0 +1,1250 @@
+{
+  "hotels": [
+    {
+      "id": "1",
+      "name": "Royal Bengaluru Hotel",
+      "location": "Bengaluru, India",
+      "pricePerNight": 4500,
+      "rating": 4.5,
+      "description": "Luxury business hotel in Indiranagar.",
+      "thumbnail": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "WiFi",
+        "Pool",
+        "Gym"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Tech City Stay",
+      "location": "Bengaluru, India",
+      "pricePerNight": 2500,
+      "rating": 4,
+      "description": "Affordable stay near Electronic City.",
+      "thumbnail": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "WiFi",
+        "Breakfast"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "The Grand MG Road",
+      "location": "Bengaluru, India",
+      "pricePerNight": 6000,
+      "rating": 5,
+      "description": "Premium hotel in the heart of the city.",
+      "thumbnail": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Spa",
+        "Bar",
+        "Pool"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Green Garden Resort",
+      "location": "Bengaluru, India",
+      "pricePerNight": 3500,
+      "rating": 4.2,
+      "description": "Peaceful resort on the outskirts.",
+      "thumbnail": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Garden",
+        "Parking",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Whitefield Corporate Suites",
+      "location": "Bengaluru, India",
+      "pricePerNight": 4200,
+      "rating": 4.4,
+      "description": "Perfect for business travelers.",
+      "thumbnail": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Conference Hall",
+        "Gym",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Mumbai Sea View",
+      "location": "Mumbai, India",
+      "pricePerNight": 8500,
+      "rating": 5,
+      "description": "Iconic hotel overlooking the Gateway.",
+      "thumbnail": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Sea View",
+        "Pool",
+        "Spa"
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Juhu Beach Resort",
+      "location": "Mumbai, India",
+      "pricePerNight": 6500,
+      "rating": 4.5,
+      "description": "Stay right on Juhu Beach.",
+      "thumbnail": "https://images.unsplash.com/photo-1495365200479-c4ed1d35e1aa?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Beach Access",
+        "Bar",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Bandra Luxury Stay",
+      "location": "Mumbai, India",
+      "pricePerNight": 5000,
+      "rating": 4.3,
+      "description": "Trendy hotel in the suburbs.",
+      "thumbnail": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Cafe",
+        "WiFi",
+        "Gym"
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Andheri Business Inn",
+      "location": "Mumbai, India",
+      "pricePerNight": 3200,
+      "rating": 4,
+      "description": "Close to the airport and offices.",
+      "thumbnail": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Airport Shuttle",
+        "Breakfast"
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Colaba Heritage Hotel",
+      "location": "Mumbai, India",
+      "pricePerNight": 4800,
+      "rating": 4.6,
+      "description": "Historical charm in South Mumbai.",
+      "thumbnail": "https://images.unsplash.com/photo-1551918120-9739cb430c6d?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Heritage Tour",
+        "Restaurant"
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Delhi Capital Palace",
+      "location": "Delhi, India",
+      "pricePerNight": 4000,
+      "rating": 4.5,
+      "description": "Stay near Connaught Place.",
+      "thumbnail": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Metro Access",
+        "WiFi",
+        "Bar"
+      ]
+    },
+    {
+      "id": "12",
+      "name": "South Delhi Boutique",
+      "location": "Delhi, India",
+      "pricePerNight": 3500,
+      "rating": 4.2,
+      "description": "Stylish stay in Hauz Khas.",
+      "thumbnail": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Rooftop Cafe",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Karol Bagh Inn",
+      "location": "Delhi, India",
+      "pricePerNight": 2000,
+      "rating": 3.8,
+      "description": "Budget friendly shopping hub.",
+      "thumbnail": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Market Access",
+        "Breakfast"
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Aerocity Transit Hotel",
+      "location": "Delhi, India",
+      "pricePerNight": 5500,
+      "rating": 4.7,
+      "description": "Luxury transit near IGI Airport.",
+      "thumbnail": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Pool",
+        "24h Cafe",
+        "Gym"
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Old Delhi Haveli",
+      "location": "Delhi, India",
+      "pricePerNight": 3000,
+      "rating": 4.3,
+      "description": "Experience culture in Chandni Chowk.",
+      "thumbnail": "https://images.unsplash.com/photo-1551918120-9739cb430c6d?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Cultural Walk",
+        "Food Tour"
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Goa Beach Paradise",
+      "location": "Goa, India",
+      "pricePerNight": 5000,
+      "rating": 4.8,
+      "description": "Beachfront cottages in Calangute.",
+      "thumbnail": "https://images.unsplash.com/photo-1495365200479-c4ed1d35e1aa?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Beach Access",
+        "Bar",
+        "Pool"
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Panjim City Hotel",
+      "location": "Goa, India",
+      "pricePerNight": 3000,
+      "rating": 4.1,
+      "description": "Central stay near casinos.",
+      "thumbnail": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Casino Access",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "18",
+      "name": "South Goa Retreat",
+      "location": "Goa, India",
+      "pricePerNight": 6000,
+      "rating": 4.9,
+      "description": "Quiet luxury in Palolem.",
+      "thumbnail": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Private Beach",
+        "Spa",
+        "Yoga"
+      ]
+    },
+    {
+      "id": "19",
+      "name": "Anjuna Party Hostel",
+      "location": "Goa, India",
+      "pricePerNight": 1500,
+      "rating": 4.2,
+      "description": "Best for backpackers and parties.",
+      "thumbnail": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Bar",
+        "Events",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "20",
+      "name": "Vagator Cliff Resort",
+      "location": "Goa, India",
+      "pricePerNight": 7500,
+      "rating": 5,
+      "description": "Stunning cliff views.",
+      "thumbnail": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Infinity Pool",
+        "Restaurant"
+      ]
+    },
+    {
+      "id": "21",
+      "name": "Chennai Grand Chola",
+      "location": "Chennai, India",
+      "pricePerNight": 9000,
+      "rating": 5,
+      "description": "Palatial luxury in Guindy.",
+      "thumbnail": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Luxury Spa",
+        "Pool",
+        "Banquet"
+      ]
+    },
+    {
+      "id": "22",
+      "name": "Marina Beach Stay",
+      "location": "Chennai, India",
+      "pricePerNight": 2500,
+      "rating": 4,
+      "description": "Close to the famous Marina Beach.",
+      "thumbnail": "https://images.unsplash.com/photo-1495365200479-c4ed1d35e1aa?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Sea Breeze",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "23",
+      "name": "T-Nagar Residency",
+      "location": "Chennai, India",
+      "pricePerNight": 3000,
+      "rating": 4.3,
+      "description": "Shopping hub of Chennai.",
+      "thumbnail": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Shopping",
+        "Restaurant"
+      ]
+    },
+    {
+      "id": "24",
+      "name": "ECR Beach Resort",
+      "location": "Chennai, India",
+      "pricePerNight": 5500,
+      "rating": 4.6,
+      "description": "Weekend getaway on East Coast Road.",
+      "thumbnail": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Private Beach",
+        "Pool"
+      ]
+    },
+    {
+      "id": "25",
+      "name": "OMR IT Park Hotel",
+      "location": "Chennai, India",
+      "pricePerNight": 3800,
+      "rating": 4.2,
+      "description": "Convenient for IT professionals.",
+      "thumbnail": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "WiFi",
+        "Meeting Rooms"
+      ]
+    },
+    {
+      "id": "26",
+      "name": "Salem Grand Estancia",
+      "location": "Salem, India",
+      "pricePerNight": 4000,
+      "rating": 4.5,
+      "description": "Luxury stay on the highway.",
+      "thumbnail": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Pool",
+        "Restaurant",
+        "Spa"
+      ]
+    },
+    {
+      "id": "27",
+      "name": "Yercaud Foothills Resort",
+      "location": "Salem, India",
+      "pricePerNight": 3000,
+      "rating": 4.2,
+      "description": "Nature stay near Yercaud hills.",
+      "thumbnail": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Garden",
+        "Trekking"
+      ]
+    },
+    {
+      "id": "28",
+      "name": "Salem City Lodge",
+      "location": "Salem, India",
+      "pricePerNight": 1500,
+      "rating": 3.8,
+      "description": "Budget stay near bus stand.",
+      "thumbnail": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Parking",
+        "24h Check-in"
+      ]
+    },
+    {
+      "id": "29",
+      "name": "Steel City Suites",
+      "location": "Salem, India",
+      "pricePerNight": 2800,
+      "rating": 4.1,
+      "description": "Comfortable business hotel.",
+      "thumbnail": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "WiFi",
+        "Conference"
+      ]
+    },
+    {
+      "id": "30",
+      "name": "Highway Inn Salem",
+      "location": "Salem, India",
+      "pricePerNight": 2200,
+      "rating": 4,
+      "description": "Perfect for travelers passing through.",
+      "thumbnail": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=600&q=80",
+      "images": [],
+      "amenities": [
+        "Parking",
+        "Restaurant"
+      ]
+    }
+  ],
+  "rooms": [
+    {
+      "id": "101",
+      "hotelId": 1,
+      "roomNumber": "101",
+      "type": "Deluxe Room",
+      "price": 4500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "King Bed",
+        "City View"
+      ]
+    },
+    {
+      "id": "102",
+      "hotelId": 1,
+      "roomNumber": "102",
+      "type": "Standard Room",
+      "price": 3000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "201",
+      "hotelId": 2,
+      "roomNumber": "201",
+      "type": "Deluxe Room",
+      "price": 2500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "King Bed",
+        "Work Desk"
+      ]
+    },
+    {
+      "id": "202",
+      "hotelId": 2,
+      "roomNumber": "202",
+      "type": "Standard Room",
+      "price": 1800,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "301",
+      "hotelId": 3,
+      "roomNumber": "301",
+      "type": "Suite",
+      "price": 6000,
+      "isAvailable": true,
+      "maxGuests": 4,
+      "features": [
+        "King Bed",
+        "Balcony"
+      ]
+    },
+    {
+      "id": "302",
+      "hotelId": 3,
+      "roomNumber": "302",
+      "type": "Deluxe Room",
+      "price": 4000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "Pool View"
+      ]
+    },
+    {
+      "id": "401",
+      "hotelId": 4,
+      "roomNumber": "401",
+      "type": "Cottage",
+      "price": 3500,
+      "isAvailable": true,
+      "maxGuests": 3,
+      "features": [
+        "Garden View",
+        "Private Sitout"
+      ]
+    },
+    {
+      "id": "402",
+      "hotelId": 4,
+      "roomNumber": "402",
+      "type": "Standard Room",
+      "price": 2500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "501",
+      "hotelId": 5,
+      "roomNumber": "501",
+      "type": "Executive Room",
+      "price": 4200,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "King Bed",
+        "Office Desk"
+      ]
+    },
+    {
+      "id": "502",
+      "hotelId": 5,
+      "roomNumber": "502",
+      "type": "Standard Room",
+      "price": 3000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "601",
+      "hotelId": 6,
+      "roomNumber": "601",
+      "type": "Sea View Suite",
+      "price": 8500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Ocean View",
+        "Bathtub"
+      ]
+    },
+    {
+      "id": "602",
+      "hotelId": 6,
+      "roomNumber": "602",
+      "type": "Deluxe Room",
+      "price": 6000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "King Bed",
+        "City View"
+      ]
+    },
+    {
+      "id": "701",
+      "hotelId": 7,
+      "roomNumber": "701",
+      "type": "Beachfront Room",
+      "price": 6500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Direct Beach Access",
+        "Balcony"
+      ]
+    },
+    {
+      "id": "702",
+      "hotelId": 7,
+      "roomNumber": "702",
+      "type": "Standard Room",
+      "price": 4500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "801",
+      "hotelId": 8,
+      "roomNumber": "801",
+      "type": "Luxury Suite",
+      "price": 5000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "King Bed",
+        "Mini Bar"
+      ]
+    },
+    {
+      "id": "802",
+      "hotelId": 8,
+      "roomNumber": "802",
+      "type": "Standard Room",
+      "price": 3500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "901",
+      "hotelId": 9,
+      "roomNumber": "901",
+      "type": "Business Room",
+      "price": 3200,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "King Bed",
+        "Work Desk"
+      ]
+    },
+    {
+      "id": "902",
+      "hotelId": 9,
+      "roomNumber": "902",
+      "type": "Standard Room",
+      "price": 2200,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "1001",
+      "hotelId": 10,
+      "roomNumber": "1001",
+      "type": "Heritage Suite",
+      "price": 4800,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Colonial Decor",
+        "Bathtub"
+      ]
+    },
+    {
+      "id": "1002",
+      "hotelId": 10,
+      "roomNumber": "1002",
+      "type": "Standard Room",
+      "price": 3000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "1101",
+      "hotelId": 11,
+      "roomNumber": "1101",
+      "type": "Royal Suite",
+      "price": 4000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "King Bed",
+        "City View"
+      ]
+    },
+    {
+      "id": "1102",
+      "hotelId": 11,
+      "roomNumber": "1102",
+      "type": "Standard Room",
+      "price": 2500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "1201",
+      "hotelId": 12,
+      "roomNumber": "1201",
+      "type": "Boutique Room",
+      "price": 3500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Art Decor",
+        "Balcony"
+      ]
+    },
+    {
+      "id": "1202",
+      "hotelId": 12,
+      "roomNumber": "1202",
+      "type": "Standard Room",
+      "price": 2500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "1301",
+      "hotelId": 13,
+      "roomNumber": "1301",
+      "type": "Deluxe Room",
+      "price": 2000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "King Bed",
+        "TV"
+      ]
+    },
+    {
+      "id": "1302",
+      "hotelId": 13,
+      "roomNumber": "1302",
+      "type": "Standard Room",
+      "price": 1200,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "1401",
+      "hotelId": 14,
+      "roomNumber": "1401",
+      "type": "Transit Suite",
+      "price": 5500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Soundproof",
+        "King Bed"
+      ]
+    },
+    {
+      "id": "1402",
+      "hotelId": 14,
+      "roomNumber": "1402",
+      "type": "Standard Room",
+      "price": 3500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "1501",
+      "hotelId": 15,
+      "roomNumber": "1501",
+      "type": "Haveli Suite",
+      "price": 3000,
+      "isAvailable": true,
+      "maxGuests": 3,
+      "features": [
+        "Traditional Decor",
+        "Courtyard View"
+      ]
+    },
+    {
+      "id": "1502",
+      "hotelId": 15,
+      "roomNumber": "1502",
+      "type": "Standard Room",
+      "price": 1800,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "1601",
+      "hotelId": 16,
+      "roomNumber": "1601",
+      "type": "Beach Cottage",
+      "price": 5000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Sea View",
+        "Private Porch"
+      ]
+    },
+    {
+      "id": "1602",
+      "hotelId": 16,
+      "roomNumber": "1602",
+      "type": "Standard Room",
+      "price": 3000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "1701",
+      "hotelId": 17,
+      "roomNumber": "1701",
+      "type": "City View Room",
+      "price": 3000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "King Bed",
+        "Balcony"
+      ]
+    },
+    {
+      "id": "1702",
+      "hotelId": 17,
+      "roomNumber": "1702",
+      "type": "Standard Room",
+      "price": 2000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "1801",
+      "hotelId": 18,
+      "roomNumber": "1801",
+      "type": "Luxury Hut",
+      "price": 6000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Beachfront",
+        "Hammock"
+      ]
+    },
+    {
+      "id": "1802",
+      "hotelId": 18,
+      "roomNumber": "1802",
+      "type": "Standard Room",
+      "price": 4000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "Garden View"
+      ]
+    },
+    {
+      "id": "1901",
+      "hotelId": 19,
+      "roomNumber": "1901",
+      "type": "Party Suite",
+      "price": 1500,
+      "isAvailable": true,
+      "maxGuests": 4,
+      "features": [
+        "Bunk Beds",
+        "Lockers"
+      ]
+    },
+    {
+      "id": "1902",
+      "hotelId": 19,
+      "roomNumber": "1902",
+      "type": "Standard Room",
+      "price": 1000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "2001",
+      "hotelId": 20,
+      "roomNumber": "2001",
+      "type": "Cliff View Suite",
+      "price": 7500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Panoramic View",
+        "Jacuzzi"
+      ]
+    },
+    {
+      "id": "2002",
+      "hotelId": 20,
+      "roomNumber": "2002",
+      "type": "Deluxe Room",
+      "price": 5000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "King Bed",
+        "Balcony"
+      ]
+    },
+    {
+      "id": "2101",
+      "hotelId": 21,
+      "roomNumber": "2101",
+      "type": "Royal Suite",
+      "price": 9000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "King Bed",
+        "Bathtub"
+      ]
+    },
+    {
+      "id": "2102",
+      "hotelId": 21,
+      "roomNumber": "2102",
+      "type": "Standard Room",
+      "price": 6000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "2201",
+      "hotelId": 22,
+      "roomNumber": "2201",
+      "type": "Sea Facing Room",
+      "price": 2500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Ocean View",
+        "Balcony"
+      ]
+    },
+    {
+      "id": "2202",
+      "hotelId": 22,
+      "roomNumber": "2202",
+      "type": "Standard Room",
+      "price": 1500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "2301",
+      "hotelId": 23,
+      "roomNumber": "2301",
+      "type": "Deluxe Room",
+      "price": 3000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "King Bed",
+        "City View"
+      ]
+    },
+    {
+      "id": "2302",
+      "hotelId": 23,
+      "roomNumber": "2302",
+      "type": "Standard Room",
+      "price": 2000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "2401",
+      "hotelId": 24,
+      "roomNumber": "2401",
+      "type": "Beach Villa",
+      "price": 5500,
+      "isAvailable": true,
+      "maxGuests": 4,
+      "features": [
+        "Private Pool",
+        "2 Bedrooms"
+      ]
+    },
+    {
+      "id": "2402",
+      "hotelId": 24,
+      "roomNumber": "2402",
+      "type": "Standard Room",
+      "price": 3500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "Garden View"
+      ]
+    },
+    {
+      "id": "2501",
+      "hotelId": 25,
+      "roomNumber": "2501",
+      "type": "Business Suite",
+      "price": 3800,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "King Bed",
+        "Work Station"
+      ]
+    },
+    {
+      "id": "2502",
+      "hotelId": 25,
+      "roomNumber": "2502",
+      "type": "Standard Room",
+      "price": 2500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "2601",
+      "hotelId": 26,
+      "roomNumber": "2601",
+      "type": "Grand Suite",
+      "price": 4000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "King Bed",
+        "Bathtub"
+      ]
+    },
+    {
+      "id": "2602",
+      "hotelId": 26,
+      "roomNumber": "2602",
+      "type": "Standard Room",
+      "price": 2500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "2701",
+      "hotelId": 27,
+      "roomNumber": "2701",
+      "type": "Hill View Room",
+      "price": 3000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Mountain View",
+        "Balcony"
+      ]
+    },
+    {
+      "id": "2702",
+      "hotelId": 27,
+      "roomNumber": "2702",
+      "type": "Standard Room",
+      "price": 2000,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "2801",
+      "hotelId": 28,
+      "roomNumber": "2801",
+      "type": "Deluxe Room",
+      "price": 1500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "King Bed",
+        "TV"
+      ]
+    },
+    {
+      "id": "2802",
+      "hotelId": 28,
+      "roomNumber": "2802",
+      "type": "Standard Room",
+      "price": 900,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "2901",
+      "hotelId": 29,
+      "roomNumber": "2901",
+      "type": "Executive Suite",
+      "price": 2800,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "King Bed",
+        "Work Desk"
+      ]
+    },
+    {
+      "id": "2902",
+      "hotelId": 29,
+      "roomNumber": "2902",
+      "type": "Standard Room",
+      "price": 1800,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    },
+    {
+      "id": "3001",
+      "hotelId": 30,
+      "roomNumber": "3001",
+      "type": "Deluxe Room",
+      "price": 2200,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "King Bed",
+        "Highway View"
+      ]
+    },
+    {
+      "id": "3002",
+      "hotelId": 30,
+      "roomNumber": "3002",
+      "type": "Standard Room",
+      "price": 1500,
+      "isAvailable": true,
+      "maxGuests": 2,
+      "features": [
+        "Queen Bed",
+        "WiFi"
+      ]
+    }
+  ],
+  "bookings": [
+    {
+      "id": "fad4",
+      "roomId": 2801,
+      "guestName": "Dinesh",
+      "email": "dinesh@gamil.com",
+      "checkInDate": "2026-01-22",
+      "checkOutDate": "2026-01-23",
+      "totalPrice": 0,
+      "status": "confirmed"
+    },
+    {
+      "id": "ac7f",
+      "roomId": 2601,
+      "guestName": "mohan",
+      "email": "mohan@gmail.com",
+      "checkInDate": "4422-04-04",
+      "checkOutDate": "2006-02-02",
+      "totalPrice": 0,
+      "status": "confirmed"
+    }
+  ],
+  "users": [
+    {
+      "id": "6781",
+      "name": "dinesh",
+      "email": "dinesh@gamil.com",
+      "password": "789"
+    }
+  ]
+}

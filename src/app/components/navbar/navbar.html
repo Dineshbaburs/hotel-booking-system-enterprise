@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" *ngIf="currentUser">
+  
+  <span routerLink="/home" style="cursor: pointer;">JDP Hotels Booking</span>
+  
+  <span class="spacer"></span>
+
+  <button mat-button routerLink="/home">Home</button>
+  <button mat-button routerLink="/hotels">All Hotels</button>
+  <button mat-button routerLink="/my-bookings">My Booking</button>
+  
+  <button mat-button (click)="logout()">Log Out</button>
+
+</mat-toolbar>

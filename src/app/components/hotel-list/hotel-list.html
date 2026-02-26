@@ -1,0 +1,30 @@
+<div class="list-container">
+  <h1>Explore Hotels</h1>
+  
+  <div class="hotel-grid">
+    <mat-card class="hotel-card" *ngFor="let hotel of hotels">
+      <img mat-card-image [src]="hotel.thumbnail" alt="{{ hotel.name }}">
+      
+      <mat-card-header>
+        <mat-card-title>{{ hotel.name }}</mat-card-title>
+        <mat-card-subtitle>{{ hotel.location }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p class="description">{{ hotel.description }}</p>
+        <div class="info-row">
+          <span class="price">{{ hotel.pricePerNight | currency:'INR' }} / night</span>
+          <span class="rating">
+            <mat-icon>star</mat-icon> {{ hotel.rating }}
+          </span>
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions align="end">
+        <button mat-raised-button color="primary" [routerLink]="['/hotels', hotel.id]">
+          BOOK NOW
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+
+/* You can add global styles to this file, and also import other style files */
+html, body { 
+  height: 100%; 
+}
+
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  
+  /* Soft grey background makes white cards look better */
+  background-color: #f5f5f5; 
+}
+
+/* Global Button Polish */
+button.mat-mdc-raised-button.mat-primary {
+  background-color: #1a237e !important; /* Matches navbar */
+}
+/* Global Styles */
+html, body { 
+  height: 100%; 
+}
+
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f5f5f5; 
+  
+  /* CRITICAL: Pushes content down so it shows below the fixed navbar */
+  padding-top: 64px; 
+}
+
+/* Global Button Polish */
+button.mat-mdc-raised-button.mat-primary {
+  background-color: #1a237e !important; 
+}

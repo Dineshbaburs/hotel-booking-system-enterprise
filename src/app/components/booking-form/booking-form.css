@@ -1,0 +1,26 @@
+.booking-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.date-row {
+  display: flex;
+  gap: 20px;
+}
+
+.date-row mat-form-field {
+  flex: 1;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}

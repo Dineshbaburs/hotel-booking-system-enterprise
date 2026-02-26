@@ -1,0 +1,56 @@
+<div class="container">
+  
+  <div *ngIf="isLoading" class="status-message"><h2>Loading...</h2></div>
+  <div *ngIf="errorMessage" class="status-message error"><p>{{ errorMessage }}</p></div>
+
+  <div class="detail-container" *ngIf="!isLoading && !errorMessage && hotel">
+    
+    <div class="hotel-hero">
+      <img [src]="hotel.thumbnail" alt="{{ hotel.name }}" class="hero-image">
+      <div class="hero-content">
+        <h1>{{ hotel.name }}</h1>
+        <p class="location"><mat-icon>location_on</mat-icon> {{ hotel.location }}</p>
+      </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="description-section">
+        <h2>About</h2>
+        <p>{{ hotel.description }}</p>
+        
+        <div style="margin-top: 20px;">
+             <h3>Amenities</h3>
+             <mat-chip-set>
+                <mat-chip *ngFor="let amenity of hotel.amenities">{{ amenity }}</mat-chip>
+             </mat-chip-set>
+        </div>
+      </div>
+
+      <div class="rooms-section">
+        <h2>Select a Room</h2>
+        
+        <p *ngIf="rooms.length === 0">No rooms available for online booking.</p>
+
+        <div class="room-list">
+          <mat-card class="room-card" *ngFor="let room of rooms">
+            <mat-card-header>
+              <mat-card-title>{{ room.type }}</mat-card-title>
+              <mat-card-subtitle>Guests: {{ room.maxGuests }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <ul style="padding-left: 20px; color: #666;">
+                 <li *ngFor="let feature of room.features">{{ feature }}</li>
+              </ul>
+              <p class="price">{{ room.price | currency:'INR' }} / night</p>
+            </mat-card-content>
+            <mat-card-actions align="end">
+              <button mat-raised-button color="accent" [routerLink]="['/book', room.id]" [disabled]="!room.isAvailable">
+                {{ room.isAvailable ? 'BOOK NOW' : 'SOLD OUT' }}
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

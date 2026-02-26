@@ -1,0 +1,46 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #1a237e;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.booking-card {
+  border-left: 5px solid #4CAF50; /* Green stripe */
+}
+
+.date-range {
+  font-weight: bold;
+  color: #555;
+  margin-top: 5px;
+}
+
+.status-badge {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-top: 15px;
+}

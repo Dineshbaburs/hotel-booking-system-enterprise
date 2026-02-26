@@ -1,0 +1,184 @@
+/* Full Page Background */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+/* Main Card Container */
+.login-container {
+  display: flex;
+  width: 900px;
+  max-width: 100%;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  min-height: 550px;
+}
+
+/* --- LEFT SIDE: Branding --- */
+.branding-section {
+  flex: 1;
+  background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%); /* Royal Blue Gradient */
+  color: white;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative Circle Overlay */
+.branding-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+}
+
+.brand-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  background: -webkit-linear-gradient(45deg, #FFD700, #FFF); /* Gold Text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* Features List */
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.feature mat-icon {
+  margin-right: 12px;
+  background: rgba(255,255,255,0.2);
+  padding: 8px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- RIGHT SIDE: Form --- */
+.form-section {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+}
+
+.form-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-header h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.form-header p {
+  color: #666;
+}
+
+/* Form Elements */
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  background: #1a237e !important; /* Force match brand color */
+}
+
+.footer-links {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.footer-links a {
+  color: #1a237e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.error-msg {
+  color: #d32f2f;
+  background: #ffebee;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.error-msg mat-icon {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .branding-section {
+    padding: 30px;
+    text-align: center;
+  }
+
+  .brand-content h1 { font-size: 2rem; }
+  
+  .features-list { display: none; /* Hide features on small screens to save space */ }
+
+  .form-section {
+    padding: 30px;
+  }
+}

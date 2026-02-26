@@ -1,0 +1,34 @@
+<div class="container">
+  <h1>My Booking History</h1>
+
+  <div *ngIf="isLoading" class="loading">Loading your trips...</div>
+
+  <div *ngIf="!isLoading && bookings.length === 0" class="empty-state">
+    <p>You haven't booked any trips yet.</p>
+    <button mat-raised-button color="primary" routerLink="/hotels">Find a Hotel</button>
+  </div>
+
+  <div class="booking-grid">
+    <mat-card *ngFor="let booking of bookings" class="booking-card">
+      <mat-card-header>
+        <mat-card-title>Booking #{{ booking.id }}</mat-card-title>
+        <mat-card-subtitle class="date-range">
+          {{ booking.checkInDate }} ➝ {{ booking.checkOutDate }}
+        </mat-card-subtitle>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <div class="info-item">
+          <span class="label">Guest:</span> {{ booking.guestName }}
+        </div>
+        <div class="status-badge">
+          CONFIRMED
+        </div>
+      </mat-card-content>
+      
+      <mat-card-actions align="end">
+        <button mat-button color="primary" [routerLink]="['/confirmation', booking.id]">View Receipt</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
