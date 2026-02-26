@@ -1,8 +1,36 @@
 <div class="list-container">
   <h1>Explore Hotels</h1>
+
+  <div class="filter-section">
+    <mat-form-field appearance="outline">
+      <mat-label>Search by name or location</mat-label>
+      <input matInput [(ngModel)]="searchText" placeholder="Ex. Mumbai">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Max Price</mat-label>
+      <input matInput type="number" [(ngModel)]="maxPrice" placeholder="Ex. 5000">
+      <span matPrefix>₹&nbsp;</span>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Min Rating</mat-label>
+      <mat-select [(ngModel)]="minRating">
+        <mat-option [value]="0">All Ratings</mat-option>
+        <mat-option [value]="3">3+ Stars</mat-option>
+        <mat-option [value]="4">4+ Stars</mat-option>
+        <mat-option [value]="4.5">4.5+ Stars</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
   
   <div class="hotel-grid">
-    <mat-card class="hotel-card" *ngFor="let hotel of hotels">
+    <mat-card 
+      class="hotel-card" 
+      *ngFor="let hotel of hotels | filterHotels:searchText:maxPrice:minRating"
+      [appStatusHighlight]="hotel.rating >= 4" 
+    >
       <img mat-card-image [src]="hotel.thumbnail" alt="{{ hotel.name }}">
       
       <mat-card-header>
@@ -22,9 +50,14 @@
 
       <mat-card-actions align="end">
         <button mat-raised-button color="primary" [routerLink]="['/hotels', hotel.id]">
-          BOOK NOW
+          VIEW DETAILS
         </button>
       </mat-card-actions>
     </mat-card>
+  </div>
+
+  <div *ngIf="(hotels | filterHotels:searchText:maxPrice:minRating).length === 0" class="no-results">
+    <mat-icon>search_off</mat-icon>
+    <p>No hotels found matching your criteria.</p>
   </div>
 </div>
