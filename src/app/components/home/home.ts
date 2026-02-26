@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon'; // Added for Admin Cards
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-home',
@@ -17,18 +20,27 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatFormFieldModule, 
     MatSelectModule,
+    MatIconModule, // Added for Admin Cards
     FormsModule
   ],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   selectedLocation: string = '';
+  currentUser: User | null = null; // Track current user
   
-  // List of Cities (Matches your Requirement)
+  // List of Cities
   locations: string[] = ['Bengaluru', 'Mumbai', 'Delhi', 'Goa', 'Chennai', 'Salem'];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
+
+  ngOnInit(): void {
+    // Get the current logged-in user
+    this.authService.currentUser$.subscribe(user => {
+      this.currentUser = user;
+    });
+  }
 
   onSearch() {
     if (this.selectedLocation) {

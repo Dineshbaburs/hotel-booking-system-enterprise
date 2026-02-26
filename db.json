@@ -1236,16 +1236,40 @@
       "checkInDate": "4422-04-04",
       "checkOutDate": "2006-02-02",
       "totalPrice": 0,
+      "status": "cancelled"
+    },
+    {
+      "id": "86d7",
+      "roomId": 2801,
+      "guestName": "Jashwanth B S",
+      "email": "jash@gmail.com",
+      "checkInDate": "222222-01-01",
+      "checkOutDate": "1144-12-23",
+      "totalPrice": 0,
       "status": "confirmed"
     }
   ],
- "users": [
+  "users": [
     {
       "id": "6781",
       "name": "dinesh",
-      "email": "dinesh@gamil.com",
-      "password": "789",
-      "role": "admin" 
+      "email": "admin@gmail.com",
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "id": "9999",
+      "name": "Guest User",
+      "email": "guest@gmail.com",
+      "password": "123",
+      "role": "user"
+    },
+    {
+      "id": "1290",
+      "name": "Jashwanth",
+      "email": "jash@gmail.com",
+      "password": "123",
+      "role": "user"
     }
   ]
 }
