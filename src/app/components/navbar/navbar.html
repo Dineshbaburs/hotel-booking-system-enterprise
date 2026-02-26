@@ -8,6 +8,10 @@
   <button mat-button routerLink="/hotels">All Hotels</button>
   <button mat-button routerLink="/my-bookings">My Booking</button>
   
+  <button mat-button *ngIf="currentUser.role === 'admin'" routerLink="/admin" color="accent">
+    Admin Panel
+  </button>
+  
   <button mat-button (click)="logout()">Log Out</button>
 
 </mat-toolbar>

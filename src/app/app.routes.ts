@@ -7,6 +7,7 @@ import { BookingConfirmationComponent } from './components/booking-confirmation/
 import { LoginComponent } from './components/login/login';
 import { RegisterComponent } from './components/register/register';
 import { MyBookingsComponent } from './components/my-bookings/my-bookings';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel'; // <--- NEW Import
 import { authGuard } from './guards/auth.guard'; // <--- Import Guard
 
 export const routes: Routes = [
@@ -23,5 +24,8 @@ export const routes: Routes = [
   { path: 'hotels/:id', component: HotelDetailComponent, canActivate: [authGuard] },
   { path: 'book/:roomId', component: BookingFormComponent, canActivate: [authGuard] },
   { path: 'confirmation/:id', component: BookingConfirmationComponent, canActivate: [authGuard] },
-  { path: 'my-bookings', component: MyBookingsComponent, canActivate: [authGuard] }
+  { path: 'my-bookings', component: MyBookingsComponent, canActivate: [authGuard] },
+  
+  // 4. Admin Routes
+  { path: 'admin', component: AdminPanelComponent, canActivate: [authGuard] } // <--- NEW Admin Route
 ];

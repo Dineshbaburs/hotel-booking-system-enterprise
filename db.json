@@ -1239,12 +1239,13 @@
       "status": "confirmed"
     }
   ],
-  "users": [
+ "users": [
     {
       "id": "6781",
       "name": "dinesh",
       "email": "dinesh@gamil.com",
-      "password": "789"
+      "password": "789",
+      "role": "admin" 
     }
   ]
 }
