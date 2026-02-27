@@ -30,7 +30,7 @@ import { Booking } from '../../models/booking.model';
 export class BookingFormComponent implements OnInit {
 
   bookingForm: FormGroup;
-  roomId!: number;   // ✅ FIXED: number type
+  roomId!: string;   // ✅ STRING — VERY IMPORTANT
   roomDetails: any;
   hotelDetails: any;
 
@@ -53,7 +53,7 @@ export class BookingFormComponent implements OnInit {
     const param = this.route.snapshot.paramMap.get('roomId');
 
     if (param) {
-      this.roomId = Number(param);   // ✅ convert string → number
+      this.roomId = param;   // ✅ NO Number()
       this.fetchRoomAndHotelDetails();
     }
   }
@@ -89,7 +89,7 @@ export class BookingFormComponent implements OnInit {
       days > 0 ? days * this.roomDetails.price : this.roomDetails.price;
 
     const bookingData: Booking = {
-      roomId: this.roomId,     // ✅ number now
+      roomId: this.roomId,  // ✅ string
       guestName: this.bookingForm.value.guestName,
       email: this.bookingForm.value.email,
       checkInDate: this.bookingForm.value.checkInDate,
@@ -100,8 +100,14 @@ export class BookingFormComponent implements OnInit {
 
     this.hotelService.createBooking(bookingData).subscribe({
       next: (newBooking) => {
-        // ✅ Correct navigation
-        this.router.navigate(['/confirmation', newBooking.id]);
+
+        console.log("Created booking:", newBooking);
+
+        if (newBooking?.id) {
+          this.router.navigate(['/confirmation', newBooking.id]);
+        } else {
+          console.error("Booking ID missing!");
+        }
       },
       error: (err) => console.error("Booking failed:", err)
     });

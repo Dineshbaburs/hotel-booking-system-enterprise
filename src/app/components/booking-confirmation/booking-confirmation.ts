@@ -23,7 +23,6 @@ export class BookingConfirmationComponent implements OnInit {
 
   isLoading = true;
   errorMessage = '';
-  assignedRoomNumber: number = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,20 +31,23 @@ export class BookingConfirmationComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const param = this.route.snapshot.paramMap.get('id');
+    const bookingId = this.route.snapshot.paramMap.get('id');
 
-    if (!param) {
-      this.errorMessage = 'Invalid booking ID.';
-      this.isLoading = false;
+    if (!bookingId) {
+      this.handleError('Invalid Booking ID.');
       return;
     }
 
-    const bookingId = Number(param);   // ✅ convert to number
-
-    this.assignedRoomNumber = Math.floor(Math.random() * 500) + 100;
+    console.log("Booking ID:", bookingId);
 
     this.hotelService.getBookingById(bookingId).subscribe({
       next: (bookingData) => {
+
+        if (!bookingData) {
+          this.handleError('Booking not found.');
+          return;
+        }
+
         this.booking = bookingData;
 
         this.hotelService.getRoomById(bookingData.roomId).subscribe({
@@ -57,11 +59,12 @@ export class BookingConfirmationComponent implements OnInit {
                 this.hotel = hotelData;
                 this.isLoading = false;
               },
-              error: () => this.handleError('Hotel details not found.')
+              error: () => this.handleError('Hotel not found.')
             });
           },
-          error: () => this.handleError('Room details not found.')
+          error: () => this.handleError('Room not found.')
         });
+
       },
       error: () => this.handleError('Booking not found.')
     });

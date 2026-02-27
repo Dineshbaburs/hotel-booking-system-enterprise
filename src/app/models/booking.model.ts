@@ -1,10 +1,10 @@
 export interface Booking {
-  id?: string | number; // <--- CHANGED: Allow string IDs
-  roomId: number;
+  id?: string;       // MUST be string
+  roomId: string;    // MUST be string
   guestName: string;
   email: string;
   checkInDate: string;
   checkOutDate: string;
   totalPrice: number;
-  status: 'confirmed' | 'cancelled';
+  status: string;
 }
