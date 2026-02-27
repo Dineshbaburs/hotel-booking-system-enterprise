@@ -1,7 +1,7 @@
 {
+  "framework": null,
   "buildCommand": "ng build --configuration production",
   "outputDirectory": "dist/hotel-booking-system",
-  "framework": null,
   "routes": [
     { "handle": "filesystem" },
     { "src": "/.*", "dest": "/index.html" }
