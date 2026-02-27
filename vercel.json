@@ -1,4 +1,5 @@
 {
+  "framework": "angular",
   "buildCommand": "ng build --configuration production",
   "outputDirectory": "dist/hotel-booking-system/browser",
   "rewrites": [
