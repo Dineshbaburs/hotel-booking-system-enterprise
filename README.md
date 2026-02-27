@@ -118,6 +118,3 @@ To evaluate the different interfaces, you can log in using the following mock ac
 
 *Developed to fulfill the requirements of the Hotel Booking and Room Management System SPA Project.*
 
-```
-
-```
