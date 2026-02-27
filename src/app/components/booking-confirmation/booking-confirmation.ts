@@ -17,12 +17,15 @@ import { Hotel } from '../../models/hotel.model';
 })
 export class BookingConfirmationComponent implements OnInit {
 
-  booking!: Booking;
-  room!: Room;
-  hotel!: Hotel;
+  booking?: Booking;
+  room?: Room;
+  hotel?: Hotel;
 
   isLoading = true;
   errorMessage = '';
+
+  // ✅ ADD THIS BACK
+  assignedRoomNumber: number = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,12 +41,13 @@ export class BookingConfirmationComponent implements OnInit {
       return;
     }
 
-    console.log("Booking ID:", bookingId);
+    // Random room number
+    this.assignedRoomNumber = Math.floor(Math.random() * 500) + 100;
 
     this.hotelService.getBookingById(bookingId).subscribe({
-      next: (bookingData) => {
+      next: (bookingData: any) => {
 
-        if (!bookingData) {
+        if (!bookingData || !bookingData.id) {
           this.handleError('Booking not found.');
           return;
         }
@@ -52,6 +56,12 @@ export class BookingConfirmationComponent implements OnInit {
 
         this.hotelService.getRoomById(bookingData.roomId).subscribe({
           next: (roomData) => {
+
+            if (!roomData) {
+              this.handleError('Room not found.');
+              return;
+            }
+
             this.room = roomData;
 
             this.hotelService.getHotelById(roomData.hotelId).subscribe({
@@ -61,6 +71,7 @@ export class BookingConfirmationComponent implements OnInit {
               },
               error: () => this.handleError('Hotel not found.')
             });
+
           },
           error: () => this.handleError('Room not found.')
         });
