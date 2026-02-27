@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'https://hotel-booking-system.onrender.com';
+  private apiUrl = 'https://hotel-booking-system.onrender.com/users';
   
   // Holds the current user state
   private currentUserSubject = new BehaviorSubject<User | null>(null);
@@ -25,12 +25,12 @@ export class AuthService {
 
   // 1. REGISTER
   register(user: User): Observable<User> {
-    return this.http.post<User>(`${this.baseUrl}/users`, user);
+    return this.http.post<User>(this.apiUrl, user);
   }
 
   // 2. LOGIN
   login(email: string, password: string): Observable<User | undefined> {
-    return this.http.get<User[]>(`${this.baseUrl}/users?email=${email}&password=${password}`)
+    return this.http.get<User[]>(`${this.apiUrl}?email=${email}&password=${password}`)
       .pipe(map(users => {
         if (users.length > 0) {
           const user = users[0];

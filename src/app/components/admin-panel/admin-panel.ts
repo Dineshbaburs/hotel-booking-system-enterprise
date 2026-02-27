@@ -38,9 +38,9 @@ export class AdminPanelComponent implements OnInit {
   rooms: Room[] = []; 
   hotels: Hotel[] = []; 
   
-  private bookingsApiUrl = 'http://localhost:3000/bookings';
-  private roomsApiUrl = 'http://localhost:3000/rooms';
-  private hotelsApiUrl = 'http://localhost:3000/hotels';
+  private bookingsApiUrl = 'https://hotel-booking-system.onrender.com/bookings';
+  private roomsApiUrl = 'https://hotel-booking-system.onrender.com/rooms';
+  private hotelsApiUrl = 'https://hotel-booking-system.onrender.com/hotels';
 
   constructor(
     private http: HttpClient, 

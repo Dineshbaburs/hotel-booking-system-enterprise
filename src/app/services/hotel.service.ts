@@ -10,7 +10,7 @@ import { Booking } from '../models/booking.model';
   providedIn: 'root'
 })
 export class HotelService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'http://hotel-booking-system.onrender.com'; // Base URL for the API
 
   constructor(private http: HttpClient) {}
 
