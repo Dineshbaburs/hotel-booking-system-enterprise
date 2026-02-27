@@ -7,7 +7,7 @@ import { Hotel } from '../models/hotel.model';
   providedIn: 'root'
 })
 export class HotelService {
-  private apiUrl = 'https://hotel-booking-system.onrender.com/hotels'; // Matches your json-server
+  private apiUrl = 'https://hotel-booking-system-enterprise.onrender.com/hotels'; // Matches your json-server
 
   constructor(private http: HttpClient) {}
 

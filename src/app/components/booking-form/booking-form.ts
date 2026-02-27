@@ -61,11 +61,11 @@ export class BookingFormComponent implements OnInit {
   }
 
   fetchRoomAndHotelDetails() {
-    this.http.get<any>(`https://hotel-booking-system.onrender.com/rooms/${this.roomId}`).subscribe({
+    this.http.get<any>(`https://hotel-booking-system-enterprise.onrender.com/rooms/${this.roomId}`).subscribe({
       next: (room) => {
         this.roomDetails = room;
         
-        this.http.get<any>(`https://hotel-booking-system.onrender.com/hotels/${room.hotelId}`).subscribe({
+        this.http.get<any>(`https://hotel-booking-system-enterprise.onrender.com/hotels/${room.hotelId}`).subscribe({
           next: (hotel) => {
             this.hotelDetails = hotel;
           }

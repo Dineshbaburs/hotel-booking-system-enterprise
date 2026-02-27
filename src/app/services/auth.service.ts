@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://hotel-booking-system.onrender.com/users';
+  private apiUrl = 'https://hotel-booking-system-enterprise.onrender.com/users';
   
   // Holds the current user state
   private currentUserSubject = new BehaviorSubject<User | null>(null);
