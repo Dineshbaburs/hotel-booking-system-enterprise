@@ -1,29 +1,47 @@
-<h2 mat-dialog-title class="dialog-title">Add New Room</h2>
+<h2 mat-dialog-title class="dialog-title" style="background-color: #002b5c; color: white; margin: 0; padding: 20px;">Add New Room</h2>
 
-<mat-dialog-content class="dialog-content">
-  <form [formGroup]="roomForm" class="room-form">
+<mat-dialog-content class="dialog-content" style="padding: 25px 24px 10px 24px;">
+  <form [formGroup]="roomForm" style="display: flex; flex-direction: column; gap: 15px; margin-top: 10px;">
     
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Room Type (e.g., Deluxe, Suite)</mat-label>
-      <input matInput formControlName="type" placeholder="Enter room type">
-      <mat-error *ngIf="roomForm.get('type')?.hasError('required')">Room type is required</mat-error>
+    <mat-form-field appearance="outline" style="width: 100%;">
+      <mat-label>Assign to Hotel</mat-label>
+      <mat-select formControlName="hotelId">
+        <mat-option *ngFor="let hotel of hotels" [value]="hotel.id">
+          {{ hotel.name }} ({{ hotel.location }})
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="roomForm.get('hotelId')?.hasError('required')">Please select a hotel</mat-error>
     </mat-form-field>
 
-    <div class="row">
-      <mat-form-field appearance="outline" class="half-width">
-        <mat-label>Price Per Night (₹)</mat-label>
-        <input matInput type="number" formControlName="price">
-        <mat-error *ngIf="roomForm.get('price')?.hasError('required')">Price is required</mat-error>
+    <div style="display: flex; gap: 15px;">
+      <mat-form-field appearance="outline" style="flex: 1;">
+        <mat-label>Room Number</mat-label>
+        <input matInput formControlName="roomNumber" placeholder="e.g., 101, 205A">
+        <mat-error *ngIf="roomForm.get('roomNumber')?.hasError('required')">Room number is required</mat-error>
       </mat-form-field>
 
-      <mat-form-field appearance="outline" class="half-width">
+      <mat-form-field appearance="outline" style="flex: 1;">
+        <mat-label>Room Type</mat-label>
+        <input matInput formControlName="type" placeholder="e.g., Deluxe, Suite">
+        <mat-error *ngIf="roomForm.get('type')?.hasError('required')">Room type is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div style="display: flex; gap: 15px;">
+      <mat-form-field appearance="outline" style="flex: 1;">
+        <mat-label>Price Per Night (₹)</mat-label>
+        <input matInput type="number" formControlName="price">
+        <mat-error *ngIf="roomForm.get('price')?.hasError('required')">Valid price is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" style="flex: 1;">
         <mat-label>Max Guests</mat-label>
         <input matInput type="number" formControlName="maxGuests">
         <mat-error *ngIf="roomForm.get('maxGuests')?.hasError('required')">Capacity is required</mat-error>
       </mat-form-field>
     </div>
 
-    <mat-form-field appearance="outline" class="full-width">
+    <mat-form-field appearance="outline" style="width: 100%;">
       <mat-label>Features (comma separated)</mat-label>
       <input matInput formControlName="features" placeholder="e.g., WiFi, King Bed, Ocean View">
       <mat-error *ngIf="roomForm.get('features')?.hasError('required')">Features are required</mat-error>
@@ -32,7 +50,7 @@
   </form>
 </mat-dialog-content>
 
-<mat-dialog-actions align="end" class="dialog-actions">
+<mat-dialog-actions align="end" style="padding: 0 24px 20px 24px; margin-bottom: 0;">
   <button mat-button (click)="onCancel()">Cancel</button>
   <button mat-raised-button color="primary" [disabled]="roomForm.invalid" (click)="onSubmit()">Save Room</button>
 </mat-dialog-actions>

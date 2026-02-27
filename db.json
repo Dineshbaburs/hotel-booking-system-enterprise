@@ -1215,6 +1215,19 @@
         "Queen Bed",
         "WiFi"
       ]
+    },
+    {
+      "id": "4a55",
+      "hotelId": 30,
+      "roomNumber": "99",
+      "type": "suite",
+      "price": 15000,
+      "maxGuests": 10,
+      "features": [
+        "Wifi",
+        "food"
+      ],
+      "isAvailable": true
     }
   ],
   "bookings": [
@@ -1257,6 +1270,26 @@
       "checkOutDate": "0005-05-05",
       "totalPrice": 0,
       "status": "cancelled"
+    },
+    {
+      "id": "ad24",
+      "roomId": null,
+      "guestName": "Dinesh Babu",
+      "email": "guest@gamil.com",
+      "checkInDate": "2025-12-02",
+      "checkOutDate": "2026-03-02",
+      "totalPrice": 0,
+      "status": "confirmed"
+    },
+    {
+      "id": "9367",
+      "roomId": "4a55",
+      "guestName": "Dinesh Babu R S",
+      "email": "guest@gamil.com",
+      "checkInDate": "2026-02-02",
+      "checkOutDate": "2026-03-23",
+      "totalPrice": 735000,
+      "status": "confirmed"
     }
   ],
   "users": [

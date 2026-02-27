@@ -31,7 +31,7 @@ import { RoomFormDialogComponent } from './room-form-dialog/room-form-dialog';
 export class AdminPanelComponent implements OnInit {
   displayedColumns: string[] = ['id', 'guestName', 'roomId', 'checkInDate', 'status', 'actions'];
   
-  // ADDED: 'location' column to show the city/state from db.json
+  // Columns matching the HTML template for the Manage Rooms tab
   roomDisplayedColumns: string[] = ['image', 'id', 'hotelName', 'location', 'roomNumber', 'type', 'price', 'maxGuests', 'features', 'status', 'actions'];
   
   bookings: Booking[] = [];
@@ -72,7 +72,7 @@ export class AdminPanelComponent implements OnInit {
     return hotel ? hotel.name : 'Unknown Hotel';
   }
 
-  // NEW: Gets the exact Location from db.json
+  // Gets the exact Location from db.json
   getHotelLocation(hotelId: number | string): string {
     const hotel = this.hotels.find(h => String(h.id) === String(hotelId));
     return hotel ? hotel.location : 'Unknown Location';
@@ -103,7 +103,11 @@ export class AdminPanelComponent implements OnInit {
   }
 
   openAddRoomDialog() {
-    const dialogRef = this.dialog.open(RoomFormDialogComponent, { width: '500px' });
+    // FIXED: Now properly passes the 'hotels' array to the Dialog so the dropdown works!
+    const dialogRef = this.dialog.open(RoomFormDialogComponent, { 
+      width: '600px',
+      data: { hotels: this.hotels } 
+    });
 
     dialogRef.afterClosed().subscribe(newRoom => {
       if (newRoom) {

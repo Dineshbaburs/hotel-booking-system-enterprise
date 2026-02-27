@@ -5,6 +5,7 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/materia
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select'; // <-- Needed for dropdown
 
 @Component({
   selector: 'app-room-form-dialog',
@@ -15,45 +16,50 @@ import { MatButtonModule } from '@angular/material/button';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule // <-- Needed for dropdown
   ],
   templateUrl: './room-form-dialog.html',
   styleUrls: ['./room-form-dialog.css']
 })
 export class RoomFormDialogComponent {
   roomForm: FormGroup;
+  hotels: any[] = []; // Array to catch the hotels passed from Admin Panel
 
   constructor(
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<RoomFormDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    // Initialize the Reactive Form
+    // Get the hotels array from the dialog data
+    this.hotels = data?.hotels || [];
+
+    // Initialize the Reactive Form with ALL proper fields (including hotelId and roomNumber)
     this.roomForm = this.fb.group({
-      hotelId: [1, Validators.required], // Defaulting to Hotel ID 1 for simplicity
+      hotelId: ['', Validators.required],
+      roomNumber: ['', Validators.required],
       type: ['', Validators.required],
       price: ['', [Validators.required, Validators.min(100)]],
       maxGuests: ['', [Validators.required, Validators.min(1), Validators.max(10)]],
-      features: ['', Validators.required], // User will enter comma-separated values
+      features: ['', Validators.required], 
       isAvailable: [true]
     });
   }
 
   onCancel(): void {
-    this.dialogRef.close(); // Closes dialog without saving
+    this.dialogRef.close(); 
   }
 
   onSubmit(): void {
     if (this.roomForm.valid) {
       const formValue = this.roomForm.value;
       
-      // Convert the comma-separated string into an array of strings
       const newRoom = {
         ...formValue,
+        hotelId: Number(formValue.hotelId), // Ensure ID is saved as a number
         features: formValue.features.split(',').map((f: string) => f.trim())
       };
       
-      // Close the dialog and pass the new room data back to the admin panel
       this.dialogRef.close(newRoom);
     }
   }

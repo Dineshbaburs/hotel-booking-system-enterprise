@@ -34,21 +34,43 @@
           <mat-label>Email Address</mat-label>
           <input matInput formControlName="email" type="email" placeholder="Ex. user@example.com">
           <mat-icon matSuffix>email</mat-icon>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">Email is required</mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Invalid email format</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Password</mat-label>
           <input matInput formControlName="password" type="password" placeholder="********">
           <mat-icon matSuffix>lock</mat-icon>
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Password is required</mat-error>
         </mat-form-field>
 
-        <p class="error-msg" *ngIf="errorMessage">
-          <mat-icon inline>error</mat-icon> {{ errorMessage }}
+        <p class="error-msg" *ngIf="errorMessage" style="color: #f44336; font-size: 0.9em; margin-bottom: 15px;">
+          {{ errorMessage }}
         </p>
 
         <button mat-raised-button color="primary" class="login-btn" type="submit" [disabled]="loginForm.invalid">
           LOGIN
         </button>
+
+        <div style="margin-top: 25px; padding: 15px; background-color: #f0f4f8; border-radius: 8px; border: 1px dashed #002b5c;">
+          <h4 style="margin: 0 0 10px 0; color: #002b5c; font-size: 0.9rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
+            <mat-icon inline style="vertical-align: middle; font-size: 18px;">info</mat-icon> Demo Credentials
+          </h4>
+          
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: #444;">
+            <div style="flex: 1;">
+              <strong>Admin:</strong><br>
+              Email: <code style="color: #d81b60;">admin@gmail.com</code><br>
+              Pass: <code style="color: #d81b60;">123</code>
+            </div>
+            <div style="flex: 1; border-left: 1px solid #ccc; padding-left: 15px;">
+              <strong>Guest:</strong><br>
+              Email: <code style="color: #d81b60;">guest@gmail.com</code><br>
+              Pass: <code style="color: #d81b60;">123</code>
+            </div>
+          </div>
+        </div>
 
         <div class="footer-links">
           <p>New to JDP Hotels Booking? <a routerLink="/register">Create an Account</a></p>

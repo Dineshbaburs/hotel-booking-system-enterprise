@@ -1,36 +1,66 @@
-<div class="booking-container">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Complete Your Booking</mat-card-title>
-      <mat-card-subtitle>Room ID: {{ roomId }}</mat-card-subtitle>
+<div class="booking-container" style="max-width: 900px; margin: 40px auto; padding: 20px;">
+  
+  <mat-card *ngIf="hotelDetails && roomDetails" style="margin-bottom: 30px; border-radius: 12px; overflow: hidden; display: flex; flex-direction: row; flex-wrap: wrap;" class="mat-elevation-z4">
+    
+    <img [src]="hotelDetails.thumbnail" alt="Hotel Image" style="width: 300px; min-width: 300px; object-fit: cover;">
+    
+    <div style="padding: 25px; flex: 1;">
+      <h2 style="margin: 0; color: #002b5c; font-weight: bold; font-size: 1.8rem;">{{ hotelDetails.name }}</h2>
+      <p style="color: #666; margin-top: 5px; font-size: 1.1rem;">
+        <mat-icon style="font-size: 18px; height: 18px; width: 18px; vertical-align: middle; color: #f44336;">location_on</mat-icon> 
+        {{ hotelDetails.location }}
+      </p>
+      
+      <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
+      
+      <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+        <div>
+          <h3 style="margin: 0; font-size: 1.4rem;">{{ roomDetails.type }}</h3>
+          <p style="margin: 5px 0; color: #777;">Room Number: <strong>{{ roomDetails.roomNumber || 'N/A' }}</strong></p>
+          <p style="margin: 5px 0; color: #777;">Features: {{ roomDetails.features?.join(', ') }}</p>
+          <p style="margin: 5px 0; color: #777;">Capacity: {{ roomDetails.maxGuests }} Guests</p>
+        </div>
+        
+        <div style="text-align: right;">
+          <h2 style="color: #2e7d32; margin: 0; font-size: 2rem;">{{ roomDetails.price | currency:'INR' }}</h2>
+          <span style="font-size: 0.9rem; color: #666;">/ night</span>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+
+
+  <mat-card style="border-radius: 12px;" class="mat-elevation-z4">
+    <mat-card-header style="background-color: #f8f9fa; padding: 20px; border-bottom: 1px solid #eee; margin-bottom: 20px;">
+      <mat-card-title style="color: #002b5c; font-weight: bold; margin: 0; font-size: 1.4rem;">Complete Your Reservation Details</mat-card-title>
     </mat-card-header>
 
-    <mat-card-content>
-      <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+    <mat-card-content style="padding: 0 30px 30px 30px;">
+      <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" style="display: flex; flex-direction: column; gap: 20px;">
         
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Guest Name</mat-label>
-          <input matInput formControlName="guestName" placeholder="John Doe">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Guest Full Name</mat-label>
+          <input matInput formControlName="guestName" placeholder="E.g. Dinesh Babu">
         </mat-form-field>
 
-        <mat-form-field appearance="outline" class="full-width">
+        <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Email Address</mat-label>
-          <input matInput formControlName="email" placeholder="john@example.com">
+          <input matInput formControlName="email" placeholder="guest@example.com">
         </mat-form-field>
 
-        <div class="date-row">
-          <mat-form-field appearance="outline">
-            <mat-label>Check-in</mat-label>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+          <mat-form-field appearance="outline" style="flex: 1; min-width: 250px;">
+            <mat-label>Check-in Date</mat-label>
             <input matInput type="date" formControlName="checkInDate">
           </mat-form-field>
 
-          <mat-form-field appearance="outline">
-            <mat-label>Check-out</mat-label>
+          <mat-form-field appearance="outline" style="flex: 1; min-width: 250px;">
+            <mat-label>Check-out Date</mat-label>
             <input matInput type="date" formControlName="checkOutDate">
           </mat-form-field>
         </div>
 
-        <button mat-raised-button color="primary" type="submit" [disabled]="bookingForm.invalid">
+        <button mat-raised-button color="primary" type="submit" [disabled]="bookingForm.invalid" style="padding: 25px 0; font-size: 1.2rem; font-weight: bold; margin-top: 10px;">
           CONFIRM BOOKING
         </button>
       </form>
