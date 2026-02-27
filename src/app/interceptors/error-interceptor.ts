@@ -1,30 +1,24 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { catchError, throwError } from 'rxjs';
+import { LoadingService } from '../services/loading.service'; // Updated path
+import { catchError, finalize, throwError } from 'rxjs';
 
 export const errorInterceptor: HttpInterceptorFn = (req, next) => {
-  // Inject the SnackBar service to show notifications
   const snackBar = inject(MatSnackBar);
+  const loadingService = inject(LoadingService); 
 
-  // Pass the request forward, but "catch" any errors that come back
+  loadingService.show(); // Trigger the loading indicator
+
   return next(req).pipe(
     catchError((error) => {
       let errorMessage = 'An unknown error occurred!';
-
-      if (error.error instanceof ErrorEvent) {
-        // Client-side or network error
-        errorMessage = `Network Error: ${error.error.message}`;
+      if (error.status === 0) {
+        errorMessage = 'Server is offline. Please start the mock backend.';
       } else {
-        // Backend API error (e.g., JSON Server is offline)
-        if (error.status === 0) {
-          errorMessage = 'Server is offline. Please start the mock backend (npm run mock:api).';
-        } else {
-          errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-        }
+        errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
       }
 
-      // Display the error globally using MatSnackBar
       snackBar.open(errorMessage, 'Close', {
         duration: 5000,
         panelClass: ['error-snackbar'],
@@ -32,11 +26,10 @@ export const errorInterceptor: HttpInterceptorFn = (req, next) => {
         verticalPosition: 'bottom'
       });
 
-      // Log it for API Request Tracking
-      console.error('HTTP Interceptor Caught an Error:', error);
-
-      // Re-throw the error so individual components can still handle it if they want
       return throwError(() => new Error(errorMessage));
+    }),
+    finalize(() => {
+      loadingService.hide(); // Ensure spinner hides whether request succeeds or fails
     })
   );
 };
