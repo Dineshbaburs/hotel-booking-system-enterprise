@@ -16,10 +16,11 @@ import { Hotel } from '../../models/hotel.model';
   styleUrl: './booking-confirmation.css'
 })
 export class BookingConfirmationComponent implements OnInit {
-  booking: Booking | undefined;
-  room: Room | undefined;
-  hotel: Hotel | undefined;
-  
+
+  booking?: Booking;
+  room?: Room;
+  hotel?: Hotel;
+
   isLoading = true;
   errorMessage = '';
   assignedRoomNumber: number = 0;
@@ -30,40 +31,41 @@ export class BookingConfirmationComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // 👇 FIXED: Removed Number() so it handles string IDs like "a1b2"
+
     const bookingId = this.route.snapshot.paramMap.get('id');
-    
+
+    if (!bookingId) {
+      this.errorMessage = 'Invalid Booking ID.';
+      this.isLoading = false;
+      return;
+    }
+
     this.assignedRoomNumber = Math.floor(Math.random() * 500) + 100;
 
-    if (bookingId) {
-      this.hotelService.getBookingById(bookingId).subscribe({
-        next: (bookingData) => {
-          this.booking = bookingData;
+    this.hotelService.getBookingById(bookingId).subscribe({
+      next: (bookingData) => {
+        this.booking = bookingData;
 
-          this.hotelService.getRoomById(bookingData.roomId).subscribe({
-            next: (roomData) => {
-              this.room = roomData;
+        this.hotelService.getRoomById(bookingData.roomId).subscribe({
+          next: (roomData) => {
+            this.room = roomData;
 
-              this.hotelService.getHotelById(roomData.hotelId).subscribe({
-                next: (hotelData) => {
-                  this.hotel = hotelData;
-                  this.isLoading = false;
-                },
-                error: (err) => this.handleError('Could not find hotel details.', err)
-              });
-            },
-            error: (err) => this.handleError('Could not find room details.', err)
-          });
-        },
-        error: (err) => this.handleError('Booking not found. Please try again.', err)
-      });
-    } else {
-      this.handleError('Invalid Booking ID.', null);
-    }
+            this.hotelService.getHotelById(roomData.hotelId).subscribe({
+              next: (hotelData) => {
+                this.hotel = hotelData;
+                this.isLoading = false;
+              },
+              error: () => this.handleError('Hotel not found.')
+            });
+          },
+          error: () => this.handleError('Room not found.')
+        });
+      },
+      error: () => this.handleError('Booking not found.')
+    });
   }
 
-  private handleError(message: string, error: any) {
-    console.error(error);
+  private handleError(message: string) {
     this.errorMessage = message;
     this.isLoading = false;
   }
