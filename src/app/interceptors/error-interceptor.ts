@@ -1,14 +1,14 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { LoadingService } from '../services/loading.service'; // Updated path
+import { LoadingService } from '../services/loading.service'; 
 import { catchError, finalize, throwError } from 'rxjs';
 
 export const errorInterceptor: HttpInterceptorFn = (req, next) => {
   const snackBar = inject(MatSnackBar);
   const loadingService = inject(LoadingService); 
 
-  loadingService.show(); // Trigger the loading indicator
+  loadingService.show(); 
 
   return next(req).pipe(
     catchError((error) => {
@@ -29,7 +29,7 @@ export const errorInterceptor: HttpInterceptorFn = (req, next) => {
       return throwError(() => new Error(errorMessage));
     }),
     finalize(() => {
-      loadingService.hide(); // Ensure spinner hides whether request succeeds or fails
+      loadingService.hide(); 
     })
   );
 };

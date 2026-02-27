@@ -2,17 +2,25 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { LoadingService } from './services/loading.service'; // Updated import
+import { LoadingService } from './services/loading.service'; // Matches renamed file
 import { NavbarComponent } from './components/navbar/navbar';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterModule, MatProgressBarModule, NavbarComponent],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  template: `
+    <mat-progress-bar 
+      *ngIf="loadingService.loadingStatus | async" 
+      mode="indeterminate" 
+      color="accent" 
+      style="position: fixed; top: 0; left: 0; z-index: 2000; height: 4px;">
+    </mat-progress-bar>
+
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+  `
 })
 export class AppComponent {
-  title = 'hotel-booking-system';
   constructor(public loadingService: LoadingService) {}
 }
