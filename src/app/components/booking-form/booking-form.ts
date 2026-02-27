@@ -30,7 +30,7 @@ import { Booking } from '../../models/booking.model';
 export class BookingFormComponent implements OnInit {
 
   bookingForm: FormGroup;
-  roomId: string = '';
+  roomId!: number;   // ✅ FIXED: number type
   roomDetails: any;
   hotelDetails: any;
 
@@ -50,9 +50,10 @@ export class BookingFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.roomId = this.route.snapshot.paramMap.get('roomId') || '';
+    const param = this.route.snapshot.paramMap.get('roomId');
 
-    if (this.roomId) {
+    if (param) {
+      this.roomId = Number(param);   // ✅ convert string → number
       this.fetchRoomAndHotelDetails();
     }
   }
@@ -70,27 +71,25 @@ export class BookingFormComponent implements OnInit {
               }
             });
         },
-        error: (err) => console.error('Error fetching room:', err)
+        error: (err) => console.error("Error fetching room data:", err)
       });
   }
 
   onSubmit(): void {
 
-    if (!this.bookingForm.valid || !this.roomDetails) return;
+    if (this.bookingForm.invalid || !this.roomDetails) return;
 
     const checkIn = new Date(this.bookingForm.value.checkInDate);
     const checkOut = new Date(this.bookingForm.value.checkOutDate);
-    const days = Math.ceil(
-      (checkOut.getTime() - checkIn.getTime()) / (1000 * 3600 * 24)
-    );
+
+    const diff = checkOut.getTime() - checkIn.getTime();
+    const days = Math.ceil(diff / (1000 * 3600 * 24));
 
     const totalPrice =
-      days > 0
-        ? days * this.roomDetails.price
-        : this.roomDetails.price;
+      days > 0 ? days * this.roomDetails.price : this.roomDetails.price;
 
     const bookingData: Booking = {
-      roomId: this.roomId,
+      roomId: this.roomId,     // ✅ number now
       guestName: this.bookingForm.value.guestName,
       email: this.bookingForm.value.email,
       checkInDate: this.bookingForm.value.checkInDate,
@@ -101,12 +100,10 @@ export class BookingFormComponent implements OnInit {
 
     this.hotelService.createBooking(bookingData).subscribe({
       next: (newBooking) => {
-        // ✅ CORRECT ROUTE
+        // ✅ Correct navigation
         this.router.navigate(['/confirmation', newBooking.id]);
       },
-      error: (err) => {
-        console.error('Booking failed:', err);
-      }
+      error: (err) => console.error("Booking failed:", err)
     });
   }
 }

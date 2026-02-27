@@ -17,9 +17,9 @@ import { Hotel } from '../../models/hotel.model';
 })
 export class BookingConfirmationComponent implements OnInit {
 
-  booking?: Booking;
-  room?: Room;
-  hotel?: Hotel;
+  booking!: Booking;
+  room!: Room;
+  hotel!: Hotel;
 
   isLoading = true;
   errorMessage = '';
@@ -32,13 +32,15 @@ export class BookingConfirmationComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const bookingId = this.route.snapshot.paramMap.get('id');
+    const param = this.route.snapshot.paramMap.get('id');
 
-    if (!bookingId) {
-      this.errorMessage = 'Invalid Booking ID.';
+    if (!param) {
+      this.errorMessage = 'Invalid booking ID.';
       this.isLoading = false;
       return;
     }
+
+    const bookingId = Number(param);   // ✅ convert to number
 
     this.assignedRoomNumber = Math.floor(Math.random() * 500) + 100;
 
@@ -55,10 +57,10 @@ export class BookingConfirmationComponent implements OnInit {
                 this.hotel = hotelData;
                 this.isLoading = false;
               },
-              error: () => this.handleError('Hotel not found.')
+              error: () => this.handleError('Hotel details not found.')
             });
           },
-          error: () => this.handleError('Room not found.')
+          error: () => this.handleError('Room details not found.')
         });
       },
       error: () => this.handleError('Booking not found.')
