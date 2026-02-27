@@ -8,6 +8,15 @@
 ## 📖 Project Overview
 The Hotel Booking and Room Management System is a fully functional, modular, and data-driven Angular Single-Page Application (SPA). It provides a seamless interface for guests to search for hotels, view room availability, and book rooms. It also features a secure, role-based Admin Panel for hotel staff to manage reservations and room inventory in real-time.
 
+## 🌍 Live Deployment
+🔹 Frontend (Production)
+
+👉 https://hotel-booking-system-enterprise.vercel.app
+
+🔹 Backend API (Render)
+
+👉 https://hotel-booking-system-enterprise.onrender.com
+
 ## ✨ Key Features & Technical Highlights
 
 * **Architecture & Component Design:** Highly modular components including `hotel-list`, `hotel-detail`, `booking-form`, `admin-panel`, and `navbar`. 
