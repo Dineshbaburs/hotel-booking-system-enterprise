@@ -1,5 +1,7 @@
 {
+  "buildCommand": "ng build --configuration production",
+  "outputDirectory": "dist/hotel-booking-system/browser",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
