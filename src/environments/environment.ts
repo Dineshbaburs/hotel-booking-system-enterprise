@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://hotel-booking-system.onrender.com'
+  apiUrl: 'https://hotel-booking-system-enterprise.onrender.com'
 };
