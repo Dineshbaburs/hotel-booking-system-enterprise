@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { LoadingService } from './services/loading.service'; // Matches renamed file
+import { LoadingService } from './services/loading.service'; 
 import { NavbarComponent } from './components/navbar/navbar';
 
 @Component({

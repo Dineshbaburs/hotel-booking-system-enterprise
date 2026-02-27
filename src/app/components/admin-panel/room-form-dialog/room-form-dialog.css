@@ -1,0 +1,36 @@
+.dialog-title {
+  background-color: var(--cu-blue);
+  color: white;
+  margin: 0;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.dialog-content {
+  padding: 25px 24px 10px 24px;
+}
+
+.room-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+}
+
+.half-width {
+  flex: 1;
+}
+
+.dialog-actions {
+  padding: 0 24px 20px 24px;
+  margin-bottom: 0;
+}

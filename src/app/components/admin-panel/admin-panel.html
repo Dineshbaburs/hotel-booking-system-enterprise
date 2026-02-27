@@ -1,45 +1,154 @@
-<div class="admin-container" style="padding: 20px;">
-  <h2>Admin Dashboard - All Reservations</h2>
+<div class="admin-wrapper">
+  <div class="admin-header">
+    <h2>Admin Dashboard</h2>
+  </div>
 
-  <table mat-table [dataSource]="bookings" class="mat-elevation-z8" style="width: 100%;">
+  <mat-tab-group dynamicHeight color="primary" class="admin-tabs">
+    
+    <mat-tab label="All Reservations">
+      <div class="table-container">
+        <table mat-table [dataSource]="bookings" class="mat-elevation-z8 custom-table">
+          
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Booking ID </th>
+            <td mat-cell *matCellDef="let booking"> <strong>{{booking.id}}</strong> </td>
+          </ng-container>
 
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> Booking ID </th>
-      <td mat-cell *matCellDef="let booking"> {{booking.id}} </td>
-    </ng-container>
+          <ng-container matColumnDef="guestName">
+            <th mat-header-cell *matHeaderCellDef> Guest Name </th>
+            <td mat-cell *matCellDef="let booking"> {{booking.guestName}} </td>
+          </ng-container>
 
-    <ng-container matColumnDef="guestName">
-      <th mat-header-cell *matHeaderCellDef> Guest Name </th>
-      <td mat-cell *matCellDef="let booking"> {{booking.guestName}} </td>
-    </ng-container>
+          <ng-container matColumnDef="roomId">
+            <th mat-header-cell *matHeaderCellDef> Room ID </th>
+            <td mat-cell *matCellDef="let booking"> {{booking.roomId}} </td>
+          </ng-container>
 
-    <ng-container matColumnDef="roomId">
-      <th mat-header-cell *matHeaderCellDef> Room </th>
-      <td mat-cell *matCellDef="let booking"> {{booking.roomId}} </td>
-    </ng-container>
+          <ng-container matColumnDef="checkInDate">
+            <th mat-header-cell *matHeaderCellDef> Check-In </th>
+            <td mat-cell *matCellDef="let booking"> {{booking.checkInDate | date}} </td>
+          </ng-container>
 
-    <ng-container matColumnDef="checkInDate">
-      <th mat-header-cell *matHeaderCellDef> Check-In </th>
-      <td mat-cell *matCellDef="let booking"> {{booking.checkInDate | date}} </td>
-    </ng-container>
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let booking"> 
+              <span class="status-badge" [ngClass]="booking.status === 'confirmed' ? 'status-green' : 'status-red'">
+                {{booking.status | uppercase}}
+              </span>
+            </td>
+          </ng-container>
 
-    <ng-container matColumnDef="status">
-      <th mat-header-cell *matHeaderCellDef> Status </th>
-      <td mat-cell *matCellDef="let booking"> 
-        <span [ngStyle]="{'color': booking.status === 'confirmed' ? 'green' : 'red'}">
-          {{booking.status | uppercase}}
-        </span>
-      </td>
-    </ng-container>
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let booking">
+              <button mat-button color="warn" (click)="cancelBooking(booking.id!)" [disabled]="booking.status === 'cancelled'">Cancel</button>
+            </td>
+          </ng-container>
 
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef> Actions </th>
-      <td mat-cell *matCellDef="let booking">
-        <button mat-button color="warn" (click)="cancelBooking(booking.id!)">Cancel</button>
-      </td>
-    </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+    </mat-tab>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+    <mat-tab label="Manage Rooms">
+      <div class="table-container">
+        
+        <div class="action-bar">
+          <button mat-raised-button color="primary" (click)="openAddRoomDialog()">
+            <mat-icon>add</mat-icon> Add New Room
+          </button>
+        </div>
+
+        <div class="scrollable-table">
+          <table mat-table [dataSource]="rooms" class="mat-elevation-z8 custom-table">
+            
+            <ng-container matColumnDef="image">
+              <th mat-header-cell *matHeaderCellDef> Photo </th>
+              <td mat-cell *matCellDef="let room"> 
+                <img [src]="getHotelImage(room.hotelId)" alt="Hotel Image" class="room-thumbnail">
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> Room ID </th>
+              <td mat-cell *matCellDef="let room"> <strong>{{room.id}}</strong> </td>
+            </ng-container>
+
+            <ng-container matColumnDef="hotelName">
+              <th mat-header-cell *matHeaderCellDef> Hotel Name </th>
+              <td mat-cell *matCellDef="let room"> 
+                <strong style="color: #002b5c;">{{ getHotelName(room.hotelId) }}</strong><br>
+                <span style="font-size: 0.8em; color: gray;">ID: {{room.hotelId}}</span>
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="location">
+              <th mat-header-cell *matHeaderCellDef> Location </th>
+              <td mat-cell *matCellDef="let room"> 
+                <span style="color: #555; font-size: 0.9em; display: flex; align-items: center;">
+                  <mat-icon style="font-size: 16px; width: 16px; height: 16px; margin-right: 4px; color: #f44336;">location_on</mat-icon>
+                  {{ getHotelLocation(room.hotelId) }}
+                </span> 
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="roomNumber">
+              <th mat-header-cell *matHeaderCellDef> Room No. </th>
+              <td mat-cell *matCellDef="let room"> {{room.roomNumber || 'N/A'}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="type">
+              <th mat-header-cell *matHeaderCellDef> Type </th>
+              <td mat-cell *matCellDef="let room"> {{room.type}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="price">
+              <th mat-header-cell *matHeaderCellDef> Price </th>
+              <td mat-cell *matCellDef="let room" class="price-text"> {{room.price | currency:'INR'}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="maxGuests">
+              <th mat-header-cell *matHeaderCellDef> Capacity </th>
+              <td mat-cell *matCellDef="let room"> 
+                <span style="display: flex; align-items: center;">
+                  <mat-icon class="small-icon">person</mat-icon> {{room.maxGuests}}
+                </span> 
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="features">
+              <th mat-header-cell *matHeaderCellDef> Features </th>
+              <td mat-cell *matCellDef="let room"> 
+                <span class="features-text">{{room.features?.join(', ')}}</span> 
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef> Status </th>
+              <td mat-cell *matCellDef="let room"> 
+                <span class="status-badge" [ngClass]="room.isAvailable ? 'status-green' : 'status-red'">
+                  {{room.isAvailable ? 'AVAILABLE' : 'BOOKED'}}
+                </span>
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> Actions </th>
+              <td mat-cell *matCellDef="let room">
+                <button mat-icon-button color="warn" (click)="deleteRoom(room.id!)" title="Delete Room">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="roomDisplayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: roomDisplayedColumns;" class="room-row"></tr>
+          </table>
+        </div>
+
+      </div>
+    </mat-tab>
+
+  </mat-tab-group>
 </div>

@@ -1256,7 +1256,7 @@
       "checkInDate": "0004-08-05",
       "checkOutDate": "0005-05-05",
       "totalPrice": 0,
-      "status": "confirmed"
+      "status": "cancelled"
     }
   ],
   "users": [

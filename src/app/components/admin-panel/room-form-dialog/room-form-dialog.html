@@ -1,0 +1,38 @@
+<h2 mat-dialog-title class="dialog-title">Add New Room</h2>
+
+<mat-dialog-content class="dialog-content">
+  <form [formGroup]="roomForm" class="room-form">
+    
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Room Type (e.g., Deluxe, Suite)</mat-label>
+      <input matInput formControlName="type" placeholder="Enter room type">
+      <mat-error *ngIf="roomForm.get('type')?.hasError('required')">Room type is required</mat-error>
+    </mat-form-field>
+
+    <div class="row">
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Price Per Night (₹)</mat-label>
+        <input matInput type="number" formControlName="price">
+        <mat-error *ngIf="roomForm.get('price')?.hasError('required')">Price is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Max Guests</mat-label>
+        <input matInput type="number" formControlName="maxGuests">
+        <mat-error *ngIf="roomForm.get('maxGuests')?.hasError('required')">Capacity is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Features (comma separated)</mat-label>
+      <input matInput formControlName="features" placeholder="e.g., WiFi, King Bed, Ocean View">
+      <mat-error *ngIf="roomForm.get('features')?.hasError('required')">Features are required</mat-error>
+    </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" [disabled]="roomForm.invalid" (click)="onSubmit()">Save Room</button>
+</mat-dialog-actions>

@@ -1,0 +1,99 @@
+.admin-wrapper {
+  padding: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.admin-header h2 {
+  color: #002b5c;
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.admin-tabs {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.table-container {
+  padding: 25px;
+}
+
+.action-bar {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+/* Forces table to scroll horizontally if the screen is too small */
+.scrollable-table {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Beautiful Thumbnail Images */
+.room-thumbnail {
+  width: 70px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: block;
+  margin: 5px 0;
+}
+
+/* Text and Icon Alignments */
+.features-text {
+  font-size: 0.85rem;
+  color: #666;
+  max-width: 200px; /* Prevents features from stretching the table too much */
+  display: inline-block;
+  white-space: normal;
+}
+
+.price-text {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.small-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  color: #555;
+  margin-right: 4px;
+}
+
+/* Premium Status Badges */
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.status-green {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-red {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+/* Hover effect on rows */
+.room-row:hover {
+  background-color: #f8f9fa;
+  transition: background-color 0.2s ease;
+}
